@@ -26,13 +26,13 @@
     <string name="package_setting_run">Run</string>
     <string name="package_setting_info">Info</string>
     <string name="package_setting_add_to_launcher">Add to launcher</string>
-    <string name="toast_mount">Mount %1$s</string>
-    <string name="toast_umount">Umount %1$s</string>
+    <string name="toast_mount">mount %1$s</string>
+    <string name="toast_umount">umount %1$s</string>
     <string name="toast_add_to_launcher">Add %1$s to launcher</string>
     
     <string name="device_policy_label">App Mount Manager</string>
     <string name="device_policy_description">Manage chosen apps\ run in background.</string>
-    <string name="device_policy_explanation">Umount chosen apps when screen off.</string>
+    <string name="device_policy_explanation">umount chosen apps when screen off.</string>
     <string name="device_policy_hint">
         To manage apps run in background, you need to set App Mount as &lt;b>Device Administrator&lt;/b>.
     </string>
@@ -44,16 +44,16 @@
     <string name="mount_service_notification_text">Tap to umount chosen apps.</string>
     <string name="notification_service_label">Notification Service</string>
     <string name="notification_service_description">Ignore foreground service when umount apps.</string>
-    <string name="toast_umount_all_ok">Umount all OK</string>
+    <string name="toast_umount_all_ok">umount all OK</string>
 
     <string name="settings_label">Settings</string>
     <string name="dialog_message_wait_a_minute">Wait a minute&#8230;</string>
-    <string name="toast_mount_all_temporary_ok">Mount all temporary OK</string>
+    <string name="toast_mount_all_temporary_ok">mount all temporary OK</string>
     <string name="toast_pre_uninstall_ok">Pre uninstall OK</string>
     <string name="preference_category_function">Function</string>
     <string name="preference_key_notification_quick_action">preference_key_show_notification</string>
     <string name="preference_title_notification_quick_action">Notification quick action</string>
-    <string name="preference_summary_notification_quick_action">Umount apps manual though notification.</string>
+    <string name="preference_summary_notification_quick_action">umount apps manual though notification.</string>
     <string name="preference_key_ignore_foreground_app">preference_key_ignore_foreground_app</string>
     <string name="preference_title_ignore_foreground_app">Ignore foreground app</string>
     <string name="preference_summary_ignore_foreground_app">
@@ -65,11 +65,11 @@
         When music app playing, etc.\nClick to enable at Notification Access.
     </string>
     <string name="preference_key_mount_all_temporary">preference_key_mount_all_temporary</string>
-    <string name="preference_title_mount_all_temporary">Mount all temporary</string>
+    <string name="preference_title_mount_all_temporary">mount all temporary</string>
     <string name="preference_summary_mount_all_temporary">To upgrade apps, etc.</string>
     <string name="preference_key_pre_uninstall">preference_key_pre_uninstall</string>
     <string name="preference_title_pre_uninstall">Pre uninstall</string>
-    <string name="preference_summary_pre_uninstall">Mount all apps, and then you can uninstall App Mount.</string>
+    <string name="preference_summary_pre_uninstall">mount all apps, and then you can uninstall App Mount.</string>
     <string name="preference_category_others">Others</string>
     <string name="preference_key_version">preference_key_version</string>
     <string name="preference_title_version">Version</string>
