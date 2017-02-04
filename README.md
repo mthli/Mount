@@ -21,7 +21,7 @@ You can run app temporary, when screen off app will be automatically umounted.
 
  1. System Settings > Accounts, remove all accounts here;
 
-    系统设置 > 账户，移除当前所有账户；
+    系统设置 > 帐号，移除当前所有帐号；
 
  2. Run adb command below in your computer, once and for all:
  

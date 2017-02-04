@@ -50,7 +50,7 @@
 
     <string name="settings_label">設置</string>
     <string name="dialog_message_wait_a_minute">稍等片刻&#8230;</string>
-    <string name="toast_mount_all_temporary_ok">已臨時挂載所有被選中的應用</string>
+    <string name="toast_mount_all_temporary_ok">已臨時挂載所有被選中的應用。</string>
     <string name="toast_pre_uninstall_ok">預備卸載操作完畢</string>
     <string name="preference_category_function">功能</string>
     <string name="preference_title_notification_quick_action">通知欄快捷操作</string>
