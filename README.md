@@ -9,6 +9,8 @@ mount: available for use as normal.
 
 umount: unavailable for use, but the data and actual package file remain.
 
+You can run app temporary, when screen off app will be automatically umounted.
+
 **Support Android Lollipop+**.
 
 ## Tutorial | 教程
@@ -17,7 +19,7 @@ umount: unavailable for use, but the data and actual package file remain.
  
     [下载](https://github.com/mthli/Mount/releases "mthli/Mount/releases")并安装应用挂载器；
 
- 1. Settings > Accounts, remove all accounts here;
+ 1. System Settings > Accounts, remove all accounts here;
 
     系统设置 > 账户，移除当前所有账户；
 
