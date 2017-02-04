@@ -23,9 +23,9 @@ You can run app temporary, when screen off app will be automatically umounted.
 
     系统设置 > 账户，移除当前所有账户；
 
- 2. Run adb command below:
+ 2. Run adb command below in your computer, once and for all:
  
-    运行如下 adb 命令：
+    在电脑上运行如下 adb 命令，除非卸载重装，否则只需要授权一次即可：
 
     `adb shell dpm set-device-owner io.github.mthli.mount/.app.MountReceiver`
 
