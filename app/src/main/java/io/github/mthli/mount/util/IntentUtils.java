@@ -31,19 +31,20 @@ import io.github.mthli.mount.app.MainActivity;
 import io.github.mthli.mount.app.SettingsActivity;
 
 public class IntentUtils {
-    public static final String SCHEMA_COCA = "coca://";
-    public static final String SCHEMA_COCA_NOTIFICATION = SCHEMA_COCA + "notification/";
-    public static final String SCHEMA_COCA_SHORTCUT = SCHEMA_COCA + "shortcut/";
+    // historical issues, should be "mount://"
+    public static final String SCHEMA_MOUNT = "coca://";
+    public static final String SCHEMA_MOUNT_NOTIFICATION = SCHEMA_MOUNT + "notification/";
+    public static final String SCHEMA_MOUNT_SHORTCUT = SCHEMA_MOUNT + "shortcut/";
 
     public static PendingIntent createNotificationIntent(Context context) {
         Intent intent = new Intent(context, MainActivity.class);
-        intent.setData(Uri.parse(IntentUtils.SCHEMA_COCA_NOTIFICATION));
+        intent.setData(Uri.parse(IntentUtils.SCHEMA_MOUNT_NOTIFICATION));
         return PendingIntent.getActivity(context, 0, intent, 0);
     }
 
     public static void createShortcut(Context context, String packageName, Bitmap icon, String label) {
         Intent shortcutIntent = new Intent(context, MainActivity.class);
-        shortcutIntent.setData(Uri.parse(SCHEMA_COCA_SHORTCUT + packageName));
+        shortcutIntent.setData(Uri.parse(SCHEMA_MOUNT_SHORTCUT + packageName));
 
         Intent addIntent = new Intent();
         addIntent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, shortcutIntent);

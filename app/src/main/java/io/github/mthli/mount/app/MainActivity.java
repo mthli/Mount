@@ -52,11 +52,11 @@ public class MainActivity extends Activity {
 
         // deal with schema
         String data = getIntent().getData().toString();
-        if (TextUtils.equals(data, IntentUtils.SCHEMA_COCA_NOTIFICATION)) {
+        if (TextUtils.equals(data, IntentUtils.SCHEMA_MOUNT_NOTIFICATION)) {
             PolicyUtils.umountAll(this, null);
             ToastUtils.showWithShortTime(this, R.string.toast_umount_all_ok);
-        } else if (data.startsWith(IntentUtils.SCHEMA_COCA_SHORTCUT)) {
-            String packageName = data.substring(IntentUtils.SCHEMA_COCA_SHORTCUT.length(), data.length());
+        } else if (data.startsWith(IntentUtils.SCHEMA_MOUNT_SHORTCUT)) {
+            String packageName = data.substring(IntentUtils.SCHEMA_MOUNT_SHORTCUT.length(), data.length());
             IntentUtils.runApplication(this, packageName);
         } else {
             IntentUtils.startCocaActivity(this);
