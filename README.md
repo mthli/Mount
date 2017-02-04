@@ -35,7 +35,7 @@ You can run app temporary, when screen off app will be automatically umounted.
 
  4. In App Mount, click list item, dialog right-top switch mount/umount.
  
-    在应用挂载器中点击列表项，在出现的对话框右上角进行挂载/退档操作。
+    在应用挂载器中点击列表项，在出现的对话框右上角进行挂载/弹出操作。
 
 Cheers🍻 
 
