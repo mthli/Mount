@@ -29,24 +29,24 @@
     <string name="package_setting_info">应用详情</string>
     <string name="package_setting_add_to_launcher">添加到桌面</string>
     <string name="toast_mount">挂载 %1$s</string>
-    <string name="toast_umount">退档 %1$s</string>
+    <string name="toast_umount">弹出 %1$s</string>
     <string name="toast_add_to_launcher">添加 %1$s 到桌面</string>
 
     <string name="device_policy_label">应用挂载器</string>
     <string name="device_policy_description">管理在后台运行的所有被选中的应用。</string>
-    <string name="device_policy_explanation">当屏幕关闭时，将所有被选中的应用退档。</string>
+    <string name="device_policy_explanation">当屏幕关闭时，将所有被选中的应用弹出。</string>
     <string name="device_policy_hint">
         为了管理在后台运行的应用，你需要把应用挂载器设置为&lt;b>系统管理员&lt;/b>。
     </string>
     <string name="device_policy_button">→ 查看教程</string>
 
-    <string name="mount_service_label">应用退档服务</string>
-    <string name="mount_service_description">接收屏幕关闭事件，用于应用退档。</string>
+    <string name="mount_service_label">应用弹出服务</string>
+    <string name="mount_service_description">接收屏幕关闭事件，用于应用弹出。</string>
     <string name="mount_service_notification_title">随时等待命令</string>
-    <string name="mount_service_notification_text">手动将所有被选中的应用退档。</string>
+    <string name="mount_service_notification_text">手动将所有被选中的应用弹出。</string>
     <string name="notification_service_label">通知服务</string>
-    <string name="notification_service_description">忽略可能被退档的前台服务。</string>
-    <string name="toast_umount_all_ok">退档完毕</string>
+    <string name="notification_service_description">忽略可能被弹出的前台服务。</string>
+    <string name="toast_umount_all_ok">弹出完毕</string>
 
     <string name="settings_label">设置</string>
     <string name="dialog_message_wait_a_minute">稍等片刻&#8230;</string>
@@ -64,7 +64,7 @@
     <string name="preference_title_mount_all_temporary">临时挂载所有应用</string>
     <string name="preference_summary_mount_all_temporary">用于更新应用等情况。</string>
     <string name="preference_title_pre_uninstall">预备卸载</string>
-    <string name="preference_summary_pre_uninstall">将所有被退档的应用挂载，接着你可以卸载这款应用。</string>
+    <string name="preference_summary_pre_uninstall">将所有被弹出的应用挂载，接着你可以卸载这款应用。</string>
     <string name="preference_category_others">其他</string>
     <string name="preference_title_version">版本</string>
     <string name="preference_title_tutorial">教程</string>
