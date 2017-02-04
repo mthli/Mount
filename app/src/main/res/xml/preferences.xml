@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ App Mount, mount/umount apps that you don't like on Android, without root.
+  ~ Copyright (C) 2017 Matthew Lee
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/preference_category_function">
+
+        <SwitchPreference
+                android:key="@string/preference_key_notification_quick_action"
+                android:title="@string/preference_title_notification_quick_action"
+                android:summary="@string/preference_summary_notification_quick_action"
+                android:defaultValue="false">
+        </SwitchPreference>
+
+        <Preference
+                android:key="@string/preference_key_ignore_foreground_app"
+                android:title="@string/preference_title_ignore_foreground_app"
+                android:summary="@string/preference_summary_ignore_foreground_app">
+        </Preference>
+
+        <Preference
+                android:key="@string/preference_key_ignore_foreground_service"
+                android:title="@string/preference_title_ignore_foreground_service"
+                android:summary="@string/preference_summary_ignore_foreground_service">
+        </Preference>
+
+        <Preference
+                android:key="@string/preference_key_mount_all_temporary"
+                android:title="@string/preference_title_mount_all_temporary"
+                android:summary="@string/preference_summary_mount_all_temporary">
+        </Preference>
+
+        <Preference
+                android:key="@string/preference_key_pre_uninstall"
+                android:title="@string/preference_title_pre_uninstall"
+                android:summary="@string/preference_summary_pre_uninstall">
+        </Preference>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/preference_category_others">
+
+        <Preference
+                android:key="@string/preference_key_version"
+                android:title="@string/preference_title_version">
+        </Preference>
+
+        <Preference
+                android:key="@string/preference_key_tutorial"
+                android:title="@string/preference_title_tutorial">
+        </Preference>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ App Mount, mount/umount apps that you don't like on Android, without root.
+  ~ Copyright (C) 2017 Matthew Lee
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<io.github.mthli.mount.widget.PackageItemLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:descendantFocusability="blocksDescendants">
+
+    <ImageView android:id="@+id/icon"
+               android:contentDescription="@null"
+               android:layout_width="40dp"
+               android:layout_height="40dp"
+               android:layout_centerInParent="true"
+               android:layout_alignParentStart="true"
+               android:scaleType="centerInside">
+    </ImageView>
+
+    <ImageView android:id="@+id/umount"
+               android:contentDescription="@null"
+               android:layout_width="32dp"
+               android:layout_height="32dp"
+               android:layout_marginEnd="-8dp"
+               android:src="@drawable/ic_eject"
+               android:layout_centerInParent="true"
+               android:layout_alignParentEnd="true"
+               android:scaleType="centerInside"
+               android:visibility="gone">
+    </ImageView>
+
+    <LinearLayout android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_centerInParent="true"
+                  android:layout_toStartOf="@id/umount"
+                  android:layout_toEndOf="@id/icon"
+                  android:paddingStart="16dp"
+                  android:paddingEnd="16dp">
+
+        <TextView android:id="@+id/label"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:textColor="?android:attr/textColorPrimary"
+                  android:textSize="16sp"
+                  android:maxLines="1"
+                  android:ellipsize="end">
+        </TextView>
+
+        <TextView android:id="@+id/version"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:textColor="?android:attr/textColorSecondary"
+                  android:textSize="14sp"
+                  android:maxLines="1"
+                  android:ellipsize="end">
+        </TextView>
+
+    </LinearLayout>
+
+</io.github.mthli.mount.widget.PackageItemLayout>
