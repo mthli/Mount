@@ -24,7 +24,7 @@
     <string name="menu_main_settings">Settings</string>
 
     <string name="package_setting_run">Run</string>
-    <string name="package_setting_info">Info</string>
+    <string name="package_setting_info">App info</string>
     <string name="package_setting_add_to_launcher">Add to launcher</string>
     <string name="toast_mount">mount %1$s</string>
     <string name="toast_umount">umount %1$s</string>

@@ -26,7 +26,7 @@
     <string name="menu_main_settings">設置</string>
 
     <string name="package_setting_run">運行</string>
-    <string name="package_setting_info">應用詳情</string>
+    <string name="package_setting_info">應用信息</string>
     <string name="package_setting_add_to_launcher">添加到桌面</string>
     <string name="toast_mount">挂載 %1$s</string>
     <string name="toast_umount">彈出 %1$s</string>
@@ -50,11 +50,11 @@
 
     <string name="settings_label">設置</string>
     <string name="dialog_message_wait_a_minute">稍等片刻&#8230;</string>
-    <string name="toast_mount_all_temporary_ok">已臨時挂載所有被選中的應用。</string>
+    <string name="toast_mount_all_temporary_ok">已臨時挂載所有被選中的應用</string>
     <string name="toast_pre_uninstall_ok">預備卸載操作完畢</string>
     <string name="preference_category_function">功能</string>
     <string name="preference_title_notification_quick_action">通知欄快捷操作</string>
-    <string name="preference_summary_notification_quick_action">點擊通知挂載所有被選中的應用</string>
+    <string name="preference_summary_notification_quick_action">點擊通知挂載所有被選中的應用。</string>
     <string name="preference_title_ignore_foreground_app">忽略當前屏幕應用</string>
     <string name="preference_summary_ignore_foreground_app">點擊前往設置使用情況訪問權限。</string>
     <string name="preference_title_ignore_foreground_service">忽略前台服務</string>
