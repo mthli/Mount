@@ -21,8 +21,9 @@ package io.github.mthli.mount.app;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Menu;
@@ -283,15 +284,26 @@ public class MountActivity extends Activity implements AbsListView.OnScrollListe
                 new ObservableOnSubscribe<List<PackageRecord>>() {
                     @Override
                     public void subscribe(ObservableEmitter<List<PackageRecord>> e) throws Exception {
+                        // list all umount apps first
                         List<PackageRecord> recordList = PackageRecord.listAll(PackageRecord.class);
                         Set<String> nameSet = new HashSet<>();
                         for (PackageRecord record : recordList) {
                             nameSet.add(record.name);
                         }
 
-                        List<ApplicationInfo> infoList = getPackageManager()
-                                .getInstalledApplications(PackageManager.GET_META_DATA);
-                        for (ApplicationInfo info : infoList) {
+                        // query all apps can launched from launcher
+                        Intent intent = new Intent(Intent.ACTION_MAIN);
+                        intent.addCategory(Intent.CATEGORY_LAUNCHER);
+                        List<ResolveInfo> resolveInfoList = getPackageManager().queryIntentActivities(intent, 0);
+
+                        // get all apps' application info
+                        List<ApplicationInfo> applicationInfoList = new ArrayList<>();
+                        for (ResolveInfo info : resolveInfoList) {
+                            applicationInfoList.add(info.activityInfo.applicationInfo);
+                        }
+
+                        // filter we don't want
+                        for (ApplicationInfo info : applicationInfoList) {
                             if (!TextUtils.equals(info.packageName, getPackageName())
                                     && !PolicyUtils.isSystemApp(info)) {
                                 PackageRecord record = new PackageRecord(info.packageName,
