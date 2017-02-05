@@ -25,6 +25,9 @@
     <string name="menu_main_loading">加载中</string>
     <string name="menu_main_settings">设置</string>
     <string name="menu_main_donate">赞助</string>
+    <string name="donate_dialog_title">支付宝</string>
+    <string name="donate_dialog_positive">复制帐号</string>
+    <string name="toast_copied">已复制</string>
 
     <string name="package_setting_run">运行</string>
     <string name="package_setting_info">应用信息</string>

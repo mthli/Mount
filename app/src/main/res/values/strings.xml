@@ -19,10 +19,14 @@
 <resources>
 
     <string name="app_name">App Mount</string>
+    <string name="alipay_account">matthewlee0725@gmail.com</string>
 
     <string name="menu_main_loading">Loading</string>
     <string name="menu_main_settings">Settings</string>
     <string name="menu_main_donate">Donate</string>
+    <string name="donate_dialog_title">AliPay</string>
+    <string name="donate_dialog_positive">Copy account</string>
+    <string name="toast_copied">Copied</string>
 
     <string name="package_setting_run">Run</string>
     <string name="package_setting_info">App info</string>

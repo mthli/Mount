@@ -20,6 +20,8 @@ package io.github.mthli.mount.app;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
@@ -275,13 +277,38 @@ public class MountActivity extends Activity implements AbsListView.OnScrollListe
                 IntentUtils.startSettingsActivity(this);
                 break;
             case R.id.donate:
-                // TODO
+                showDonateDialog();
                 break;
             default:
                 break;
         }
 
         return true;
+    }
+
+    private void showDonateDialog() {
+        final AlertDialog dialog = new AlertDialog.Builder(this)
+                .setCancelable(true)
+                .setTitle(R.string.donate_dialog_title)
+                .setMessage(R.string.alipay_account)
+                .setPositiveButton(R.string.donate_dialog_positive, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        ClipboardManager manager = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+                        ClipData data = ClipData.newPlainText("", getString(R.string.alipay_account));
+                        manager.setPrimaryClip(data);
+                        ToastUtils.showWithShortTime(MountActivity.this, R.string.toast_copied);
+                    }
+                })
+                .create();
+        dialog.setOnShowListener(new DialogInterface.OnShowListener() {
+            @Override
+            public void onShow(DialogInterface dialogInterface) {
+                dialog.getWindow().setLayout(DisplayUtils.dp2px(MountActivity.this, 322.0F),
+                        WindowManager.LayoutParams.WRAP_CONTENT);
+            }
+        });
+        dialog.show();
     }
 
     @Override
