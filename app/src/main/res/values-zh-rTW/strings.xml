@@ -24,6 +24,7 @@
 
     <string name="menu_main_loading">加載中</string>
     <string name="menu_main_settings">設置</string>
+    <string name="menu_main_donate">贊助</string>
 
     <string name="package_setting_run">運行</string>
     <string name="package_setting_info">應用信息</string>

@@ -72,6 +72,7 @@ public class MountActivity extends Activity implements AbsListView.OnScrollListe
     private AlertDialog mSettingDialog;
     private MenuItem mLoadingItem;
     private MenuItem mSettingsItem;
+    private MenuItem mDonateItem;
 
     private PackageRecord mCurrentRecord;
     private Disposable mFastScrollDisposable;
@@ -197,7 +198,7 @@ public class MountActivity extends Activity implements AbsListView.OnScrollListe
                 mListView, false);
         if (!PolicyUtils.isDeviceOwnerApp(this)) {
             mListView.addHeaderView(mHeaderView);
-            hideSetting();
+            hideOptions();
         }
 
         RxUtils.disposeSafety(mHeaderViewDisposable);
@@ -207,12 +208,12 @@ public class MountActivity extends Activity implements AbsListView.OnScrollListe
                     @Override
                     public void accept(Long aLong) throws Exception {
                         if (!PolicyUtils.isDeviceOwnerApp(MountActivity.this)) {
-                            hideSetting();
+                            hideOptions();
                             if (mListView.getHeaderViewsCount() <= 0){
                                 mListView.addHeaderView(mHeaderView);
                             }
                         } else {
-                            showSetting();
+                            showOptions();
                             if (mListView.getHeaderViewsCount() > 0) {
                                 mListView.removeHeaderView(mHeaderView);
                             }
@@ -227,8 +228,10 @@ public class MountActivity extends Activity implements AbsListView.OnScrollListe
 
         mLoadingItem = menu.findItem(R.id.loading);
         mSettingsItem = menu.findItem(R.id.settings);
+        mDonateItem = menu.findItem(R.id.donate);
+
         showLoading();
-        hideSetting();
+        hideOptions();
 
         return true;
     }
@@ -245,15 +248,23 @@ public class MountActivity extends Activity implements AbsListView.OnScrollListe
         }
     }
 
-    private void showSetting() {
+    private void showOptions() {
         if (mSettingsItem != null) {
             mSettingsItem.setVisible(true);
         }
+
+        if (mDonateItem != null) {
+            mDonateItem.setVisible(true);
+        }
     }
 
-    private void hideSetting() {
+    private void hideOptions() {
         if (mSettingsItem != null) {
             mSettingsItem.setVisible(false);
+        }
+
+        if (mDonateItem != null) {
+            mDonateItem.setVisible(false);
         }
     }
 
@@ -262,6 +273,9 @@ public class MountActivity extends Activity implements AbsListView.OnScrollListe
         switch (item.getItemId()) {
             case R.id.settings:
                 IntentUtils.startSettingsActivity(this);
+                break;
+            case R.id.donate:
+                // TODO
                 break;
             default:
                 break;

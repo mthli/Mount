@@ -31,4 +31,9 @@
           android:showAsAction="never">
     </item>
 
+    <item android:id="@+id/donate"
+          android:title="@string/menu_main_donate"
+          android:showAsAction="never">
+    </item>
+
 </menu>
