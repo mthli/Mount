@@ -55,6 +55,8 @@
     <string name="preference_category_function">功能</string>
     <string name="preference_title_notification_quick_action">通知栏快捷操作</string>
     <string name="preference_summary_notification_quick_action">点击通知弹出所有被选中的应用。</string>
+    <string name="preference_title_show_system_apps">显示系统应用</string>
+    <string name="preference_summary_show_system_apps">允许挂载/弹出你不喜欢的系统应用。</string>
     <string name="preference_title_ignore_foreground_app">忽略当前屏幕应用</string>
     <string name="preference_summary_ignore_foreground_app">点击前往设置使用情况访问权限。</string>
     <string name="preference_title_ignore_foreground_service">忽略前台服务</string>

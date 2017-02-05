@@ -37,4 +37,9 @@ public class PreferenceUtils {
         String key = context.getString(R.string.preference_key_notification_quick_action);
         return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(key, false);
     }
+
+    public static boolean isShowSystemApps(Context context) {
+        String key = context.getString(R.string.preference_key_show_system_apps);
+        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(key, false);
+    }
 }

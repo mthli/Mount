@@ -49,6 +49,7 @@ import io.github.mthli.mount.util.DisplayUtils;
 import io.github.mthli.mount.util.ImageUtils;
 import io.github.mthli.mount.util.IntentUtils;
 import io.github.mthli.mount.util.PolicyUtils;
+import io.github.mthli.mount.util.PreferenceUtils;
 import io.github.mthli.mount.util.RxUtils;
 import io.github.mthli.mount.util.ToastUtils;
 import io.github.mthli.mount.widget.PackageSettingLayout;
@@ -303,19 +304,20 @@ public class MountActivity extends Activity implements AbsListView.OnScrollListe
                         }
 
                         // filter we don't want
+                        boolean isShowSystemApps = PreferenceUtils.isShowSystemApps(MountActivity.this);
                         for (ApplicationInfo info : applicationInfoList) {
-                            if (!TextUtils.equals(info.packageName, getPackageName())
-                                    && !PolicyUtils.isSystemApp(info)) {
-                                PackageRecord record = new PackageRecord(info.packageName,
-                                        ImageUtils.drawable2Bytes(info.loadIcon(getPackageManager())),
-                                        info.loadLabel(getPackageManager()).toString(),
-                                        getPackageManager().getPackageInfo(info.packageName, 0).versionName,
-                                        false);
-                                if (!nameSet.contains(info.packageName)) {
-                                    nameSet.add(info.packageName);
-                                    recordList.add(record);
-                                }
+                            if (TextUtils.equals(info.packageName, getPackageName())
+                                    || (PolicyUtils.isSystemApp(info) && !isShowSystemApps)
+                                    || nameSet.contains(info.packageName)) {
+                                continue;
                             }
+
+                            nameSet.add(info.packageName);
+                            recordList.add(new PackageRecord(info.packageName,
+                                    ImageUtils.drawable2Bytes(info.loadIcon(getPackageManager())),
+                                    info.loadLabel(getPackageManager()).toString(),
+                                    getPackageManager().getPackageInfo(info.packageName, 0).versionName,
+                                    false));
                         }
 
                         // sort by language
