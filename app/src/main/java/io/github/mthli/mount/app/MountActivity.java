@@ -49,7 +49,6 @@ import io.github.mthli.mount.util.DisplayUtils;
 import io.github.mthli.mount.util.ImageUtils;
 import io.github.mthli.mount.util.IntentUtils;
 import io.github.mthli.mount.util.PolicyUtils;
-import io.github.mthli.mount.util.PreferenceUtils;
 import io.github.mthli.mount.util.RxUtils;
 import io.github.mthli.mount.util.ToastUtils;
 import io.github.mthli.mount.widget.PackageSettingLayout;
@@ -304,10 +303,8 @@ public class MountActivity extends Activity implements AbsListView.OnScrollListe
                         }
 
                         // filter we don't want
-                        boolean isShowSystemApps = PreferenceUtils.isShowSystemApps(MountActivity.this);
                         for (ApplicationInfo info : applicationInfoList) {
                             if (TextUtils.equals(info.packageName, getPackageName())
-                                    || (PolicyUtils.isSystemApp(info) && !isShowSystemApps)
                                     || nameSet.contains(info.packageName)) {
                                 continue;
                             }

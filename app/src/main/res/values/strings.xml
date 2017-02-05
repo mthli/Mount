@@ -54,9 +54,6 @@
     <string name="preference_key_notification_quick_action">preference_key_show_notification</string>
     <string name="preference_title_notification_quick_action">Notification quick action</string>
     <string name="preference_summary_notification_quick_action">umount apps manual though notification.</string>
-    <string name="preference_key_show_system_apps">preference_key_show_system_apps</string>
-    <string name="preference_title_show_system_apps">Show system apps</string>
-    <string name="preference_summary_show_system_apps">Allow to mount/umount system apps you don\'t like.</string>
     <string name="preference_key_ignore_foreground_app">preference_key_ignore_foreground_app</string>
     <string name="preference_title_ignore_foreground_app">Ignore foreground app</string>
     <string name="preference_summary_ignore_foreground_app">
