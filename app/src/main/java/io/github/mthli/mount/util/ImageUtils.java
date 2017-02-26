@@ -21,12 +21,15 @@ package io.github.mthli.mount.util;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Matrix;
 import android.graphics.drawable.Drawable;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 public class ImageUtils {
+    public static final int LAUNCHER_ICON_MAX_SIZE = 192; // px
+
     public static Bitmap drawable2Bitmap(Drawable drawable) {
         Bitmap bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(),
                 Bitmap.Config.ARGB_8888);
@@ -56,5 +59,21 @@ public class ImageUtils {
 
     public static Bitmap bytes2Bitmap(byte[] bytes) {
         return BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+    }
+
+    public static Bitmap resize(Bitmap bitmap, int newWidth, int newHeight) {
+        bitmap = bitmap.copy(bitmap.getConfig(), true);
+
+        int bitmapWidth = bitmap.getWidth();
+        int bitmapHeight = bitmap.getHeight();
+        float scaleWidth = ((float) newWidth) / bitmapWidth;
+        float scaleHeight = ((float) newHeight) / bitmapHeight;
+        Matrix matrix = new Matrix();
+        matrix.postScale(scaleWidth, scaleHeight);
+
+        Bitmap resizedBitmap = Bitmap.createBitmap(bitmap, 0, 0,
+                bitmapWidth, bitmapHeight, matrix, false);
+        bitmap.recycle();
+        return resizedBitmap;
     }
 }

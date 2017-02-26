@@ -26,6 +26,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.ResolveInfo;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Menu;
@@ -190,8 +191,17 @@ public class MountActivity extends Activity implements AbsListView.OnScrollListe
     @Override
     public void onClickAddToLauncher() {
         dismissSettingDialogSafety();
-        IntentUtils.createShortcut(this, mCurrentRecord.name,
-                ImageUtils.bytes2Bitmap(mCurrentRecord.icon), mCurrentRecord.label);
+
+        Bitmap icon = ImageUtils.bytes2Bitmap(mCurrentRecord.icon);
+        float width = icon.getWidth();
+        float height = icon.getHeight();
+        float max = width > height ? width : height;
+        if (max > ImageUtils.LAUNCHER_ICON_MAX_SIZE) {
+            float ratio = ImageUtils.LAUNCHER_ICON_MAX_SIZE / max;
+            icon = ImageUtils.resize(icon, (int) (width * ratio), (int) (height * ratio));
+        }
+
+        IntentUtils.createShortcut(this, mCurrentRecord.name, icon, mCurrentRecord.label);
         ToastUtils.showWithShortTime(this, getString(R.string.toast_add_to_launcher, mCurrentRecord.label));
     }
 
