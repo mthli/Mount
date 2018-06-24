@@ -19,15 +19,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
 
     defaultConfig {
-        applicationId "io.github.mthli.mount"
+        applicationId 'io.github.mthli.mount'
         minSdkVersion 21
-        targetSdkVersion 25
-        versionCode 8
-        versionName "1.1.1"
+        targetSdkVersion 27
+        versionCode 9
+        versionName '2.0.0'
     }
 
     buildTypes {
@@ -43,9 +43,9 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:support-annotations:25.2.0'
-    compile 'io.reactivex.rxjava2:rxjava:2.0.6'
-    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
-    compile 'com.github.satyan:sugar:1.5'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:support-annotations:27.1.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.9'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    implementation 'com.github.satyan:sugar:1.5'
 }
